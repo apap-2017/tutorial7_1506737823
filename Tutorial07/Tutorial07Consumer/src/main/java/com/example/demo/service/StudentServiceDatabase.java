@@ -58,4 +58,9 @@ public class StudentServiceDatabase implements StudentService
     public CourseModel selectCourse(String id){
         return studentMapper.selectCourse(id);
     }
+
+    @Override
+    public List<CourseModel> selectAllCourse() {
+        return null;
+    }
 }

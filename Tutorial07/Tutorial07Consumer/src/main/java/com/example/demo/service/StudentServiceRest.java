@@ -1,5 +1,6 @@
 package com.example.demo.service;
 
+import com.example.demo.dao.CourseDAO;
 import com.example.demo.model.CourseModel;
 import com.example.demo.model.StudentModel;
 import lombok.extern.slf4j.Slf4j;
@@ -17,6 +18,9 @@ public class StudentServiceRest implements StudentService
 {
     @Autowired
     private StudentDAO studentDAO;
+
+    @Autowired
+    private CourseDAO courseDAO;
 
     @Override
     public StudentModel selectStudent (String npm)
@@ -39,7 +43,11 @@ public class StudentServiceRest implements StudentService
 
     @Override
     public CourseModel selectCourse(String id) {
-        return null;
+        return courseDAO.selectCourse(id);
     }
 
+    @Override
+    public List<CourseModel> selectAllCourse() {
+        return courseDAO.selectAllCourses();
+    }
 }

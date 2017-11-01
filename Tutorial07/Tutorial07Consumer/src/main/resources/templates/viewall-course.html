@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/fragment :: title">
+    <title>View All Students</title>
+</head>
+<body>
+<h1>All Students</h1>
+<!-- Table Kartu Keluarga -->
+<div class="container-fluid">
+    <table id="table_id" class="table table-hover table-responsive">
+        <thead>
+        <tr>
+            <th class="center">No</th>
+            <th class="center">ID</th>
+            <th class="center">Name</th>
+            <th class="center">Credits</th>
+        </tr>
+        </thead>
+        <tbody  >
+        <tr th:each="courses,iterationStatus: ${courses}">
+            <td th:text="${iterationStatus.count}">Nomor</td>
+            <td th:text="${courses.idCourse}">NPM</td>
+            <td th:text="${courses.name}">Nama</td>
+            <td th:text="${courses.credits}">GPA</td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+<!--div th:each="student,iterationStatus: ${students}" th:class="${iterationStatus.odd}? 'odd'">
+    <h3 th:text="'NPM = ' + ${student.npm}">Student NPM</h3>
+    <h3 th:text="'Name = ' + ${student.name}">Student Name</h3>
+    <h3 th:text="'GPA = ' + ${student.gpa}">Student GPA</h3>
+
+    <h3 th:text="${student.gpa >= 3.49}? 'Cum Laude' : 'Sangat Memuaskan'"></h3>
+
+    <h3 th:if="${student.gpa>=3.49}">Cum Laude!</h3>
+    <h3 th:unless="${student.gpa>=3.49}">Sangat Memuaskan!</h3>
+
+    <h3>Kuliah yang diambil</h3>
+
+    <ul th:each="course,iterationStatus: ${student.courses}">
+        <li th:text="${course.name} + '-' + ${course.credits} + ' sks'" >
+            Nama kuliah-X SKS
+        </li>
+    </ul>
+
+    <a th:href="'/student/delete/' + ${student.npm}" > Delete Data</a><br/>
+    <a th:href="'/student/update/' + ${student.npm}" > Update Data</a><br/>
+
+    <hr/ >
+   </div-->
+
+<script>
+    $(document).ready( function () {
+        $('#table_id').dataTable( {
+            paging: true,
+            bJQueryUI: true
+        } );
+    } );
+</script>
+</body>
+</html>
