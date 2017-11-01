@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:fragment="title">
+    <title th:text="${title}"></title>
+
+    <!-- JQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <!-- DataTables -->
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.16/css/dataTables.bootstrap.min.css" />
+    <script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.16/js/dataTables.bootstrap.min.js"></script>
+
+</head>
+<body>
+<div th:fragment="header">
+    <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/student/viewall">Daftar Mahasiswa</a></li>
+        <li><a href="/student/add">Menambah Mahasiswa</a></li>
+    </ul>
+</div>
+<div th:fragment="footer">
+    <hr/>
+    <h4>Mata Kuliah APAP</h4>
+</div>
+</body>
+</html>
